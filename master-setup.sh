@@ -1,4 +1,8 @@
 #!/bin/bash
+getenforce 
+
+setenforce 0
+sudo sed -i 's/^SELINUX=enforcing$/SELINUX=disabled/' /etc/selinux/config
 
 # Setting Up Kube-Master-1 
 dnf update -y
